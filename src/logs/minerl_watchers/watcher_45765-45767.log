@@ -1,2 +1,0 @@
-2024-01-11 16:08:31 dotan.local process_watcher[45775] INFO Process watcher started between parent 45765 and child 45767 
-2024-01-11 16:10:37 dotan.local process_watcher[45775] INFO Parent is not running, hence we need terminate the child.
