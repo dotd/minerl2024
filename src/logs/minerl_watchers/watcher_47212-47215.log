@@ -1,0 +1,2 @@
+2024-01-11 16:28:49 dotan.local process_watcher[47222] INFO Process watcher started between parent 47212 and child 47215 
+2024-01-11 16:31:59 dotan.local process_watcher[47222] INFO Child is not running anymore, launcher can terminate.
