@@ -5,6 +5,16 @@ import logging
 import time
 import datetime
 
+minerl_environments = {"tree": "MineRLTreechop-v0",
+                       "nav_dense": "MineRLNavigateDense-v0",
+                       "nav": "MineRLNavigate-v0",
+                       "nav_extreme_dense": "MineRLNavigateExtremeDense-v0",
+                       "nav_extreme": "MineRLNavigateExtreme-v0",
+                       "pickaxe": "MineRLObtainIronPickaxe-v0",
+                       "pickaxe_dense": "MineRLObtainIronPickaxeDense-v0",
+                       "diamond": "MineRLObtainDiamond-v0",
+                       "diamond_dense": "MineRLObtainDiamondDense-v0"}
+
 
 def tst_hello_world(render=False):
     start_time = time.time()
