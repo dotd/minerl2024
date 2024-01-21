@@ -17,6 +17,7 @@ api_keys/
 **/cache/**
 **/.cache/**
 **/.ipynb_checkpoints/**
+**/lightning_logs/**
 google_drive_softlink/
 config.txt
 .vscode/launch.json
