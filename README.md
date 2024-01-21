@@ -9,3 +9,8 @@ https://minerl.readthedocs.io/en/latest/
 ## Actions
 https://minerl.readthedocs.io/en/latest/environments/index.html#action-space
 
+## Some installation problems
+To install on ubuntu I needed to install:
+```
+venv/bin/pip install git+https://github.com/minerllabs/minerl
+```
