@@ -16,7 +16,7 @@ minerl_environments = {"tree": "MineRLTreechop-v0",
                        "diamond_dense": "MineRLObtainDiamondDense-v0"}
 
 
-def tst_hello_world(render=False):
+def tst_hello_world(render=True ):
     start_time = time.time()
     # logging.basicConfig(level=logging.DEBUG)
 
@@ -42,7 +42,7 @@ def tst_hello_world(render=False):
         action["ESC"] = 0
         obs, reward, done, _ = env.step(action)
         if render:
-            env.render()
+            #env.render()
         i = i + 1
 
 
