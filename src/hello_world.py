@@ -4,6 +4,11 @@ import os
 import logging
 import time
 import datetime
+from matplotlib import pyplot as plt
+from PIL import Image
+import subprocess
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))  # This is your Project Root
 
 minerl_environments = {"tree": "MineRLTreechop-v0",
                        "nav_dense": "MineRLNavigateDense-v0",
@@ -16,7 +21,15 @@ minerl_environments = {"tree": "MineRLTreechop-v0",
                        "diamond_dense": "MineRLObtainDiamondDense-v0"}
 
 
-def tst_hello_world(render=False):
+def save_image_to_disk(obs, name):
+    folder_images = f"{SCRIPT_DIR}/images/"
+    if not os.path.exists(folder_images):
+        os.makedirs(folder_images)
+    im = Image.fromarray(obs)
+    im.save(f"{folder_images}/your_file_{name}.jpeg")
+
+
+def tst_hello_world(render=True):
     start_time = time.time()
     # logging.basicConfig(level=logging.DEBUG)
 
@@ -42,8 +55,13 @@ def tst_hello_world(render=False):
         action["ESC"] = 0
         obs, reward, done, _ = env.step(action)
         if render:
-            env.render()
+            save_image_to_disk(obs["pov"], f"{i}")
         i = i + 1
+
+
+def operate_xvfb():
+    xvfb = subprocess.Popen(['Xvfb', ':99'])
+    os.environ["DISPLAY"] = ":99"
 
 
 if __name__ == "__main__":
@@ -54,5 +72,5 @@ if __name__ == "__main__":
     logging.basicConfig(level=getattr(logging, "DEBUG"),
                         handlers=[logging.FileHandler(log_file),
                                   logging.StreamHandler()])
-
+    operate_xvfb()
     tst_hello_world()
