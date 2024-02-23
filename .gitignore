@@ -15,6 +15,7 @@ api_keys/
 **/.logs/**
 **/debug/**
 **/cache/**
+**/MNIST/**
 **/.cache/**
 **/.ipynb_checkpoints/**
 **/lightning_logs/**
