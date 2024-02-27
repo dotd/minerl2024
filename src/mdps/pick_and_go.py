@@ -1,8 +1,6 @@
 import numpy as np
 import math
-from tqdm import tqdm
 from gym import Env
-import matplotlib.pyplot as plt
 
 
 class Point:
@@ -225,20 +223,3 @@ class PickAndGo(Env):
         info = self._get_info()
         return state_next, reward, done, info
 
-
-def tst_PickAndGo():
-    env = PickAndGo()
-    for episode in range(5):
-        print(f"episode={episode}")
-        obs = env.reset()
-        plt.imshow(np.transpose(obs, (1, 2, 0)))
-        for i in tqdm(range(1000)):
-            action = env.get_random_action()
-            state_next, reward, done, info = env.step(action)
-            plt.imshow(np.transpose(state_next, (1, 2, 0)))
-            plt.show(block=False)
-            plt.pause(0.01)
-
-
-if __name__ == "__main__":
-    tst_PickAndGo()

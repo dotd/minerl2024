@@ -2,7 +2,7 @@ import torch
 from torch import nn
 
 
-class CustomNetwork(nn.Module):
+class NetworkConvDiscreteContinuous(nn.Module):
     def __init__(self,
                  num_conv_layers,
                  input_channels,
@@ -14,7 +14,7 @@ class CustomNetwork(nn.Module):
                  continuous_head_sizes,
                  kernel_size=3,
                  padding=1):
-        super(CustomNetwork, self).__init__()
+        super(NetworkConvDiscreteContinuous, self).__init__()
 
         # Create convolutional layers
         conv_layers = []
